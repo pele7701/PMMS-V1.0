@@ -18,11 +18,11 @@ public class TbMaterialPrice {
 	@Name
 	@Prev(els=@EL("uuid(32)")) // 可以是 uuid() uuid(32)
 	@Column("price_id")
-    private String priceId ;
+    protected String priceId ;
 	
     /** 物料编码 */
 	@Column("material_code")
-    private String materialCode ;
+	protected String materialCode ;
 	
     /** 物料价格 */
 	@Column("price")
@@ -30,11 +30,11 @@ public class TbMaterialPrice {
 	
     /** 价格凭证 */
 	@Column("ticket")
-    private String ticket ;
+	protected String ticket ;
 	
     /** 序号 */
 	@Column("seq")
-    private String seq ;
+	protected String seq ;
 
     /** 物料价格ID */
     public String getPriceId(){

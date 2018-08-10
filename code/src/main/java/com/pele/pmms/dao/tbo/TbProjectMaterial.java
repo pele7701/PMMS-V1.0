@@ -14,19 +14,19 @@ public class TbProjectMaterial {
 	/** 项目物料ID */
 	@Name
 	@Column("pm_id")
-	private String pmId;
+	protected String pmId;
 	
 	/** 项目编码 */
 	@Column("project_code")
-	private String projectCode;
+	protected String projectCode;
 	
 	/** 物料编码 */
 	@Column("material_code")
-	private String materialCode;
+	protected String materialCode;
 	
 	/** 配额 */
 	@Column("quota")
-	private String quota;
+	protected String quota;
 
 	/** 项目物料ID */
 	public String getPmId() {

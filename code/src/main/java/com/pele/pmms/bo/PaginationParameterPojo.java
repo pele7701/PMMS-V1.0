@@ -1,4 +1,7 @@
-package com.pele.pmms;
+package com.pele.pmms.bo;
+
+import com.pele.pmms.BasicsPojo;
+
 /**
  * 封装分页参数
  * @author beili

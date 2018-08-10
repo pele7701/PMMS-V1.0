@@ -1,4 +1,4 @@
-var ioc = {
+var ioc = {	
 	daoTemplate : {
 		type : "org.nutz.dao.impl.NutDao",
 		args : [ {
@@ -12,6 +12,7 @@ var ioc = {
 			]
 		}
 	},
+	
 	dataSource : {
 		type : "com.alibaba.druid.pool.DruidDataSource",
 		events : {

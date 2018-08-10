@@ -17,24 +17,24 @@ public class TbMaterial {
 	/** 物料编码 */
 	@Name
 	@Column("material_code")
-    private String materialCode ;
+	protected String materialCode ;
 	
     /** 物料名称 */
 	@Column("material_name")
-    private String materialName ;
+	protected String materialName ;
 	
     /** 单位 */
 	@Column("material_unit")
-    private String materialUnit ;
+	protected String materialUnit ;
 	
     /** 规格 */
 	@Column("material_pi_spec")
-    private String materialPiSpec ;
+	protected String materialPiSpec ;
 	
     /** 状态  默认值:有效(Y)*/
 	@Column("state")
-    private String state = Constant.TbColumn.STATE_VALID;
-
+	protected String state = Constant.TbColumn.STATE_VALID;
+	
     /** 物料编码 */
     public String getMaterialCode(){
         return this.materialCode;
@@ -75,4 +75,5 @@ public class TbMaterial {
     public void setState(String state){
         this.state = state;
     }
+	
 }

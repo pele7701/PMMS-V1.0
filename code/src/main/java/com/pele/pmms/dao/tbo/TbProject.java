@@ -17,15 +17,15 @@ public class TbProject {
 	/** 项目编码 */
 	@Name
 	@Column("project_code")
-    private String projectCode ;
+	protected String projectCode ;
 	
     /** 项目名称 */
 	@Column("project_name")
-    private String projectName ;
+	protected String projectName ;
 	
     /** 状态  默认值:有效(Y)*/
 	@Column("state")
-    private String state = Constant.TbColumn.STATE_VALID;
+	protected String state = Constant.TbColumn.STATE_VALID;
 	
 	
 
