@@ -14,6 +14,14 @@ import com.pele.pmms.Constant;
  */
 @Table("tb_project")
 public class TbProject {
+	
+	public TbProject(){}
+	
+	public TbProject(String projectCode, String projectName) {
+		this.projectCode = projectCode;
+		this.projectName = projectName;
+	}
+	
 	/** 项目编码 */
 	@Name
 	@Column("project_code")

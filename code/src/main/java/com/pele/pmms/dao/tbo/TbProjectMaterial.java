@@ -1,7 +1,9 @@
 package com.pele.pmms.dao.tbo;
 
 import org.nutz.dao.entity.annotation.Column;
+import org.nutz.dao.entity.annotation.EL;
 import org.nutz.dao.entity.annotation.Name;
+import org.nutz.dao.entity.annotation.Prev;
 import org.nutz.dao.entity.annotation.Table;
 
 /**
@@ -11,8 +13,18 @@ import org.nutz.dao.entity.annotation.Table;
  */
 @Table("tb_project_material")
 public class TbProjectMaterial {
+	
+	public TbProjectMaterial(){}
+	
+	public TbProjectMaterial(String projectCode, String materialCode, String quota) {
+		this.projectCode = projectCode;
+		this.materialCode = materialCode;
+		this.quota = quota;
+	}
+
 	/** 项目物料ID */
 	@Name
+	@Prev(els=@EL("uuid(32)")) // 可以是 uuid() uuid(32)
 	@Column("pm_id")
 	protected String pmId;
 	

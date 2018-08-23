@@ -3,6 +3,7 @@ package com.pele.pmms.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.nutz.dao.Cnd;
 import org.nutz.dao.QueryResult;
 import org.nutz.dao.entity.Record;
 import org.nutz.dao.pager.Pager;
@@ -10,6 +11,7 @@ import org.nutz.ioc.loader.annotation.IocBean;
 
 import com.pele.pmms.Constant;
 import com.pele.pmms.bo.MaterialBo;
+import com.pele.pmms.dao.tbo.TbMaterial;
 import com.pele.pmms.util.CommonUtil;
 /**
  * 物料dao
@@ -99,6 +101,30 @@ public class MaterialDao extends BasicsDao{
 		}
 		pager.setRecordCount(total);//设置记录总数
 		return new QueryResult(resultList, pager);
+	}
+	/**
+	 * 新增物料
+	 * @param paramObj
+	 * @return 0失败，1成功
+	 */
+	public int addMaterial(TbMaterial paramObj){
+		int result = 0;
+		if(paramObj != null 
+				&& CommonUtil.isNotEmptyString(paramObj.getMaterialCode()) 
+				&& CommonUtil.isNotEmptyString(paramObj.getMaterialName())){
+			//根据物料编码获取物料数量，判断物料是否已经存在
+			int count = daoTemplate.count(TbMaterial.class,Cnd.where("material_code","=",paramObj.getMaterialCode()));
+			if(count < 1){
+				//如果物料编码不存在则新增物料数据
+				insertMaterial(paramObj);
+				result = 1;
+			}
+		}
+		return result;
+	}
+	
+	private void insertMaterial(TbMaterial paramObj){
+		daoTemplate.insert(paramObj);
 	}
 	
 	

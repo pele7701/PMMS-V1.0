@@ -15,7 +15,7 @@
     </filter>
     <filter-mapping>
         <filter-name>whale</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>*.at</url-pattern>
     </filter-mapping>
     <!-- NutFilter负责加载nutz MVC -->
     <filter>

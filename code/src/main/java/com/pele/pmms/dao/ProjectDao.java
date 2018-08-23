@@ -42,7 +42,7 @@ public class ProjectDao extends BasicsDao {
 	/**
 	 * 新增项目
 	 * @param paramObj
-	 * @return
+	 * @return 0失败，1成功
 	 */
 	public int addProject(TbProject paramObj){
 		int result = 0;

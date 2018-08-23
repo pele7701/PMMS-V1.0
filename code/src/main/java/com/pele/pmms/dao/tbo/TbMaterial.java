@@ -13,7 +13,15 @@ import com.pele.pmms.Constant;
  */
 @Table("tb_material")
 public class TbMaterial {
+	
+	public TbMaterial(){}
 
+	public TbMaterial(String materialCode, String materialName, String materialUnit, String materialPiSpec) {
+		this.materialCode = materialCode;
+		this.materialName = materialName;
+		this.materialUnit = materialUnit;
+		this.materialPiSpec = materialPiSpec;
+	}
 	/** 物料编码 */
 	@Name
 	@Column("material_code")
