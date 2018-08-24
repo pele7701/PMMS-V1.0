@@ -6,7 +6,7 @@ import org.nutz.ioc.loader.annotation.IocBean;
  * @author beili
  *
  */
-@IocBean(name = "materialDao")
+@IocBean(name = "materialPriceDao")
 public class MaterialPriceDao extends BasicsDao{
 
 }

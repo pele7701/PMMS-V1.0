@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
+import org.nutz.json.Json;
 import org.nutz.mvc.annotation.AdaptBy;
 import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Ok;
@@ -31,7 +32,7 @@ public class ImportAt {
 	private final static String IMPORT_TYPE_MATERIAL_PRICE = "PRICE";//物料价格导入文件类型
 	
 	private final static int PROJECT_MATERIAL_EXCEL_COLUMN_SIZE = 8;//项目物料Excel有效数据列数
-	private final static int MATERIAL_PRICE_EXCEL_COLUMN_SIZE = 5;//物料价格Excel有效数据列数
+	private final static int MATERIAL_PRICE_EXCEL_COLUMN_SIZE = 4;//物料价格Excel有效数据列数
 
 	@Inject("projectDao")
 	private ProjectDao projectDao;
@@ -116,7 +117,7 @@ public class ImportAt {
 			//将读取到的数据插入数据库
 			for(String[] array:pmDataList){
 				if(array != null && array.length == MATERIAL_PRICE_EXCEL_COLUMN_SIZE){
-					
+					System.out.println(Json.toJson(array));
 				}
 			}
 		}

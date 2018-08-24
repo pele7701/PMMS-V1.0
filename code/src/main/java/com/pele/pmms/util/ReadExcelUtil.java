@@ -101,7 +101,7 @@ public class ReadExcelUtil {
 					cellvalue = cell.getDateCellValue().toLocaleString();
 				} else {// 如果是纯数字
 					// 取得当前Cell的数值
-					cellvalue = String.format("%.0f", cell.getNumericCellValue());//使用String.format格式化取整,避免出现科学计数法
+					cellvalue = numericFormat(cell.getNumericCellValue());//
 				}
 				break;
 			}
@@ -116,6 +116,14 @@ public class ReadExcelUtil {
 			cellvalue = "";
 		}
 		return cellvalue;
+	}
+	
+	private static String numericFormat(double numeric){
+		String s = String.format("%.4f", numeric);//使用String.format格式化取整,避免出现科学计数法
+		if(CommonUtil.isNotEmptyString(s) && s.indexOf(".0000") > -1){
+			s = s.replace(".0000", "");
+		}
+		return s;
 	}
 
 	public static void main(String[] args) {
